@@ -69,3 +69,22 @@ html(lang='en')
         p(style='color:#4e7cc8;') The page was loaded 
           =zCount 
           |  times. Reload it
+  
+  //The Table tab generates a table from the Node server to the browser page.
+  //## Launching the application
+  //
+  // - Make changes to the [index.ts] file, e.g. change the message;
+  // - Run the command: [npm run build]
+  // - Run the command: [npm run start]
+  // - Launch your browser with [http://localhost:3000/]
+  //
+  //You will receive the entry in your browser. The [build] command compiled the file [index.ts] to [index.js] (because the browser does not understand ts files). The [start] command (for production) launched this js file in the browser.
+  //Each time you change [index.ts], you must run these two commands.
+  //
+  //## Fast developer testing
+  //
+  //The above startup is tedious. For the developer, there is a better way:
+  // - When you don't have it, install [npm and nodemon]
+  // - In the [package.json] file is command: ["dev": "nodemon index.ts",]
+  // - Run the application with the command: [npm run dev]
+  
