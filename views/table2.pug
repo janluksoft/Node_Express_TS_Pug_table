@@ -1,0 +1,71 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='../css/default.css')
+    |  
+    link(rel='stylesheet', href='../css/style_fold.css')
+    |  
+    title=zPageTitle
+  body
+    nav
+      div(style='margin-bottom: 1px;')
+        a.men(href='/') Home
+        a.men(href='table') Table
+    .start
+        div.box_right(style='float: right') 
+          table
+            tr 
+              td PUG 
+                br 
+                | template
+                br 
+                | engine
+              td 
+                img(src='../images/pug_logo.svg' width='100')
+
+        .main=zPageTitle
+        if zbIsTable
+            p This is a table from node server:
+            // {name: 'Kasia',sex: 'woman', age: 25},
+            table
+              tbody
+                tr
+                  td
+                    .table-responsive
+                      table.fold-table(style='width: 320px;')
+                        thead
+                          tr
+                            th Name
+                            th Sex
+                            th Age
+                        tbody
+                          each item in ztNames
+                            tr.view
+                              td=item.name
+                              td=item.sex
+                              td=item.age
+                  td
+                    ul.people_list
+                      each item in ztNames
+                        li=item.name
+        else
+            h2 The Node multipage web-app with Express, TS, Pug engine
+            p The Node application displays a table downloaded from the Node server. The menu loads various pages from the server using routing methods.
+            p The application used:
+            ul
+              li TypeScript language;
+              li Express framework;
+              li Built-in middleware: express.static;
+              li Pug template engine;
+              li Pug also displays variables from the server;
+              li Uses helpers: [each], [if];
+            p
+              | The Table tab generates a table from the Node server
+              br
+              |  to the browser page. Press position [Table] in menu
+        br
+        p(style='color:#4e7cc8;') The page was loaded 
+          =zCount 
+          |  times. Reload it
